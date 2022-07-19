@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: concept_licensing.html 
+keywords: licenses, standard, premium, features, licensing, alerts, notifications, emails, reports, term, subscription, reporting 
+summary: Une licence est requise pour déverrouiller les fonctions dans Converged Systems Advisor. Pour chaque infrastructure convergée FlexPod, vous avez le choix entre plusieurs options de licence. 
+---
+= Licences
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une licence est requise pour déverrouiller les fonctions dans Converged Systems Advisor. Pour chaque infrastructure convergée FlexPod, vous avez le choix entre plusieurs options de licence.
+
+[cols="12,64,24"]
+|===
+| Licence | Caractéristiques | Conditions 
+
+
+| Aucune licence  a| 
+Version limitée pour démontrer les fonctionnalités des produits :
+
+* Contrôle des configurations FlexPod pendant une période d'essai de 24 heures
+* Tableaux de bord d'état pour consulter la conformité aux meilleures pratiques FlexPod
+* Inventaire et résolution limités (disponibles dans les versions sous licence)
+
+ a| 
+* Libre
+* Usage unique (24 heures)
+
+
+
+
+| Standard  a| 
+* Contrôle continu des configurations FlexPod
+* Tableaux de bord d'état pour consulter la conformité aux meilleures pratiques FlexPod
+* Interopérabilité de firmware pour le calcul, le réseau, le stockage et l'hyperviseur
+* Des outils de gestion du cycle de vie permettant d'identifier les modifications et d'éviter les écarts de configuration
+* Diagrammes détaillés des inventaires et du système pour une résolution avancée des problèmes
+* Support fourni directement par NetApp
+
+ a| 
+Licence basée sur l'abonnement :
+
+* 12 mois minimum
+* 60 mois maximum
+
+
+
+
+| Premium  a| 
+Toutes les fonctionnalités incluses dans la licence Standard plus :
+
+* Création de rapports
++
+Création de rapports complets en temps réel sur l'état de santé, l'interopérabilité et les inventaires du FlexPod
+
+* Notification et alertes
++
+Notifications régulières concernant l'état de santé de la configuration et les changements d'état
+
+
+ a| 
+Licence basée sur l'abonnement :
+
+* 12 mois minimum
+* 60 mois maximum
+
+
+|===

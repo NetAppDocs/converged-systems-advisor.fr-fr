@@ -1,0 +1,399 @@
+---
+sidebar: sidebar 
+permalink: task_getting_started.html 
+keywords: agent, deploy, install, set up, VMware, ESXi, read-only, accounts, NSS, account, log in, login, UCS, Nexus, ONTAP, download, add device, add infrastructure, share, sharing, notifications, alerts, emails, support, contract, sshd 
+summary: 'Pour commencer à utiliser Converged Systems Advisor, vous devez préparer votre environnement, installer et configurer l"agent, puis ajouter l"infrastructure convergée au portail.' 
+---
+= Commencez avec Converged Systems Advisor
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour commencer à utiliser Converged Systems Advisor, vous devez préparer votre environnement, installer et configurer l'agent, puis ajouter une infrastructure convergée au portail.
+
+Vous pouvez vouloir le faire link:concept_architecture.html["Découvrez le fonctionnement de Converged Systems Advisor"] avant de commencer.
+
+
+
+== Préparez votre environnement
+
+La préparation de votre environnement comprend la vérification du support pour votre configuration, la création de comptes pour l'agent et la création d'un compte sur le site de support NetApp.
+
+.Étapes
+. Vérifier le support dans http://mysupport.netapp.com/matrix["Matrice d'interopérabilité NetApp"^]:
++
+.. Vérifiez que Converged Systems Advisor prend en charge l'infrastructure convergée FlexPod.
+.. Vérifiez que vous disposez d'un serveur VMware ESXi pris en charge par l'agent Converged Systems Advisor.
++
+Pour réduire l'utilisation de la bande passante, NetApp recommande d'installer l'agent dans le même data Center que l'infrastructure convergée FlexPod.
+
+
+
+. Assurez-vous que le réseau dans lequel vous installez l'agent autorise la connectivité entre les composants :
++
+** L'agent doit être connecté à chaque composant FlexPod afin qu'il puisse collecter des données de configuration.
+** L'agent nécessite également une connexion Internet sortante pour communiquer avec les noeuds finaux suivants :
++
+*** csa.netapp.com
+*** docker.com
+*** docker.io
+
+
+
+
+.  accounts on FlexPod devices,Créez des comptes sur chaque composant FlexPod.
++
+L'agent nécessite des informations d'identification pour collecter les données de configuration. Vous devez fournir les informations d'identification lors de la configuration de l'agent.
+
+. Accédez au https://mysupport.netapp.com["Site de support NetApp"^] et vous inscrire pour créer un compte, si vous n'en avez pas.
++
+Un compte sur le site de support NetApp est nécessaire pour configurer l'agent et accéder au portail.
+
+
+
+
+
+=== Création de comptes sur les terminaux FlexPod
+
+Vous devez configurer un compte en lecture seule dans Cisco UCS Manager et sur vos commutateurs Cisco Nexus. Un compte admin est nécessaire pour les systèmes ONTAP et VMware. Vous pouvez configurer un compte d'accès en lecture seule pour d'autres utilisateurs de votre contrôleur APIC. L'agent utilise ces comptes pour collecter les données de configuration de chaque périphérique.
+
+
+
+==== Créez un compte en lecture seule pour Cisco UCS Manager
+
+.Étapes
+. Connectez-vous à Cisco UCS Manager.
+. Créez un utilisateur authentifié localement nommé _csa-readonly_.
++
+
+TIP: Par défaut, tous les nouveaux utilisateurs sont en lecture seule.
+
+
+
+
+
+==== Créez un compte en lecture seule pour vos commutateurs Nexus
+
+.Étapes
+. Connectez-vous à chaque switch Nexus à l'aide de SSH ou telnet.
+. Passer en mode de configuration globale :
++
+ configure terminal
++
+.. Créer un nouvel utilisateur :
++
+ username [name] password [password] role [role]
+.. Enregistrez la configuration :
++
+ copy running configuration startup configuration
+
+
+
+
+Si vous utilisez un serveur TACACS+ et que vous devez accorder des privilèges d'utilisateur CSA, rendez-vous sur  CSA user privileges using a TACACS+ server.
+
+
+
+==== Créez un compte admin pour ONTAP
+
+.Étapes
+. Connectez-vous à OnCommand System Manager et cliquez sur l'icône Paramètres :
++
+image:screenshot_system_manager_settings.gif["Icône des paramètres dans System Manager."].
+
+. Sur la page utilisateurs, cliquez sur *Ajouter*.
+. Entrez un nom d'utilisateur et un mot de passe et ajoutez *ssh*, *ontapi* et *console* comme méthodes de connexion utilisateur avec accès administrateur.
++
+image:screenshot_system_manager_add_user.gif["Affiche l'écran Ajouter un utilisateur dans System Manager, dans lequel un nouvel utilisateur ONTAP dispose d'autorisations ssh et ontapi."]
+
+
+
+
+
+==== Créez un compte en lecture seule pour VMware
+
+.Étapes
+. Connectez-vous à vCenter.
+. Dans le menu vCenter, choisissez *Administration*.
+. Sous rôles, choisissez *lecture seule*.
+. Cliquez sur l'icône de l'action *Clone role* et remplacez le nom par *CSA*.
+. Sélectionnez le rôle *CSA* nouvellement créé.
+. Cliquez sur l'icône *Modifier le rôle*.
+. Sous *Modifier le rôle*, choisissez *Global*, puis cochez *licences*.
+. Dans la barre latérale, sélectionnez *Single Sign On-> utilisateurs et groupes-> Créer un nouvel utilisateur*.
+. Nommez le nouvel utilisateur *CSARO* sous DOMAINE vpshere.local.
+. Dans la barre latérale, sélectionnez *autorisations globales* sous *contrôle d'accès*.
+. Choisissez l'utilisateur *CSARO* et attribuez LE RÔLE *CSA*.
+. Connectez-vous au client Web.
++
+Utilisez l'ID utilisateur : *CSARO@vsphere.locksbsbl* et le mot de passe précédemment créé.
+
+
+
+
+
+==== Créez un compte en lecture seule sur le contrôleur APIC
+
+.Étapes
+. Cliquez sur *Admin*.
+. Cliquez sur *Créer de nouveaux utilisateurs locaux*.
+. Sous *User Identity*, entrez les informations utilisateur.
+. Sous *sécurité*, sélectionnez toutes les options de domaine de sécurité.
+. Cliquez sur *+* pour ajouter des certificats utilisateur et des clés SSH si nécessaire.
+. Cliquez sur *Suivant*.
+. Cliquez sur *+* pour ajouter des rôles pour votre domaine.
+. Sélectionnez *Nom du rôle* dans le menu déroulant.
+. Sélectionnez *Lire* pour le *Type de privilège de rôle*.
+. Cliquez sur *Terminer*.
+
+
+
+
+== Déploiement de l'agent
+
+Vous devez déployer l'agent Converged Systems Advisor sur un serveur VMware ESXi. L'agent collecte des données de configuration sur chaque système de votre infrastructure convergée FlexPod et les envoie vers le portail Converged Systems Advisor.
+
+.Étapes
+.  and installing the agent,Téléchargez et installez l'agent
+.  up networking for the agent,Configurer la mise en réseau de l'agent
+.  an SSL certificate on the agent,Si nécessaire, installez un certificat SSL sur l'agent
+.  the agent to discover your FlexPod infrastructure,Configurez l'agent pour découvrir votre infrastructure FlexPod
+
+
+
+
+=== Téléchargement et installation de l'agent
+
+Vous devez déployer l'agent Converged Systems Advisor sur un serveur VMware ESXi.
+
+Pour réduire l'utilisation de la bande passante, vous devez installer l'agent sur un serveur VMware ESXi situé dans le même centre de données que la configuration FlexPod. L'agent doit être connecté à chaque composant FlexPod et à Internet afin que les données de configuration puissent être envoyées au portail Converged Systems Advisor via le port HTTPS 443.
+
+L'agent est déployé en tant que machine virtuelle VMware vSphere à partir d'un modèle OVF (Open Virtualization format). Le modèle est basé sur Debian avec 1 CPU virtuel et 2 Go de RAM (plus peut être nécessaire pour les systèmes FlexPod multiples ou plus grands).
+
+.Étapes
+. Téléchargez l'agent :
++
+.. Connectez-vous au https://csa.netapp.com/["Portail Converged Systems Advisor"^].
+.. Cliquez sur *Download Agent*.
+
+
+. Installez l'agent en déployant le modèle OVF sur le serveur VMware ESXi.
++
+Sur certaines versions de VMware, un avertissement peut s'afficher lors du déploiement du modèle OVF. La machine virtuelle a été développée à partir de la dernière version de vCenter avec une compatibilité matérielle pour les versions plus anciennes, ce qui peut entraîner un avertissement. Il est recommandé de passer en revue les options de configuration avant d'accuser réception de l'avertissement, puis de poursuivre l'installation.
+
+
+
+
+
+=== Configuration de la mise en réseau pour l'agent
+
+Vous devez vous assurer que la mise en réseau est correctement configurée sur la machine virtuelle de l'agent pour permettre la communication entre l'agent et les périphériques FlexPod et entre l'agent et plusieurs points de terminaison Internet. Notez que la pile réseau est désactivée sur la machine virtuelle jusqu'à ce que le système s'initialise.
+
+.Étapes
+. Assurez-vous qu'une connexion Internet sortante permet d'accéder aux points de terminaison suivants :
++
+** csa.netapp.com
+** docker.com
+** docker.io
+
+
+. Connectez-vous à la console de la machine virtuelle de l'agent à l'aide du client VMware vSphere.
++
+Le nom d'utilisateur par défaut est `csa` et le mot de passe par défaut est `netapp`.
+
++
+
+TIP: Pour des raisons de sécurité, SSHD est désactivé par défaut.
+
+. Lorsque vous y êtes invité, modifiez le mot de passe par défaut et notez le mot de passe, car il ne peut pas être récupéré.
++
+Après avoir modifié le mot de passe, le système redémarre et démarre le logiciel de l'agent.
+
+. Si DHCP n'est pas disponible dans le sous-réseau, configurez une adresse IP statique et des paramètres DNS à l'aide des outils Debian standard, puis redémarrez l'agent.
++
+link:task_setting_static_ip.html["Cliquez ici pour obtenir des instructions détaillées"].
+
++
+Par défaut, la configuration réseau de la machine virtuelle Debian est DHCP. NetworkManager est installé et fournit une interface utilisateur texte que vous pouvez démarrer à partir de la commande nmtui (voir https://manpages.debian.org/stretch/network-manager/nmtui.1.en.html["page de manuel"^] pour en savoir plus).
+
++
+Pour obtenir de l'aide supplémentaire sur la mise en réseau, voir https://wiki.debian.org/NetworkConfiguration["La page de configuration réseau sur le wiki Debian"^].
+
+. Si vos stratégies de sécurité exigent que l'agent se trouve sur un réseau pour communiquer avec les périphériques FlexPod et un autre réseau pour communiquer avec Internet, ajoutez une deuxième interface réseau dans vCenter et configurez les VLAN et les adresses IP corrects.
+. Si un serveur proxy est requis pour l'accès à Internet, exécutez la commande suivante :
++
+`sudo csa_set_proxy`
+
++
+La commande génère deux invites et affiche le format requis pour l'entrée de proxy. La première invite vous permet de spécifier un proxy HTTP, tandis que la seconde vous permet de spécifier un proxy HTTPS.
+
++
+Voici l'invite du proxy HTTP :
+
++
+image:screenshot_http_proxy.gif["Capture d'écran affichant l'invite du proxy HTTP."]
+
+. Une fois le réseau en marche, attendez environ 5 minutes pour que le système se mette à jour et démarre.
++
+Un message de diffusion apparaît sur la console lorsque l'agent est opérationnel.
+
+. Vérifiez la connectivité en exécutant la commande CLI suivante à partir de l'agent :
++
+ curl -k https://www.netapp.com/us/index.aspx
++
+Si la commande échoue, vérifiez les paramètres DNS. La machine virtuelle de l'agent doit être dotée d'une configuration DNS valide et pouvoir atteindre csa.netapp.com.
+
+
+
+
+
+=== Installation d'un certificat SSL sur l'agent
+
+L'agent crée un certificat auto-signé lors du premier démarrage de la machine virtuelle. Si nécessaire, vous pouvez supprimer ce certificat et utiliser votre propre certificat SSL.
+
+Converged Systems Advisor prend en charge :
+
+* Tout chiffrement compatible avec OpenSSL version 1.0.1 ou ultérieure
+* TLS 1.1 et TLS 1.2
+
+
+.Étapes
+. Connectez-vous à la console de la machine virtuelle de l'agent.
+. Accédez à `/opt/csa/certs`
+. Supprimez le certificat auto-signé que l'agent a créé.
+. Collez votre certificat SSL.
+. Redémarrez la machine virtuelle.
+
+
+
+
+=== Configuration de l'agent pour découvrir votre infrastructure FlexPod
+
+Vous devez configurer l'agent pour qu'il collecte les données de configuration de chaque périphérique de votre infrastructure convergée FlexPod.
+
+.Étapes
+. Ouvrez un navigateur Web et saisissez l'adresse IP de la machine virtuelle de l'agent.
+. Connectez-vous à l'agent en saisissant le nom d'utilisateur et le mot de passe de votre compte sur le site de support NetApp.
+. Ajoutez les périphériques FlexPod que l'agent doit détecter.
++
+Vous avez deux options :
+
++
+.. Cliquez sur *Ajouter un périphérique* pour entrer des détails sur vos périphériques FlexPod, un par un.
+.. Cliquez sur *Importer les périphériques* pour remplir et télécharger un modèle CSV qui contient des détails sur tous les périphériques.
++
+Notez ce qui suit :
+
++
+*** Le nom d'utilisateur et le mot de passe doivent correspondre au compte que vous avez créé précédemment pour le terminal.
+*** Si la gestion des utilisateurs LDAP est configurée dans votre environnement UCS, vous devez ajouter le domaine de l'utilisateur avant le nom d'utilisateur. Par exemple : local\csa-readonly
+
+
+
+
+
+
+Chaque périphérique de l'infrastructure FlexPod doit être coché dans le tableau.
+
+image:screenshot_agent_configuration.gif["Affiche chaque périphérique requis avec une coche verte dans la colonne État."]
+
+
+
+== Ajout d'une infrastructure au portail
+
+Une fois l'agent configuré, il envoie des informations relatives à chaque périphérique FlexPod au portail Converged Systems Advisor. Vous devez maintenant sélectionner chacun de ces composants sur le portail pour créer une infrastructure complète que vous pouvez surveiller.
+
+.Étapes
+. Dans le https://csa.netapp.com/["Portail Converged Systems Advisor"^], Cliquez sur *Ajouter une infrastructure*.
+. Suivez les étapes pour ajouter l'infrastructure :
++
+.. Saisissez les informations de base sur l'infrastructure.
++
+Si vous ajoutez une infrastructure Cisco ACI, entrez *yes* lorsque le système FlexPod utilise Cisco UCS Manager et entrez *commutateur Nexus en mode ACI* lorsqu'on vous demande le type de configuration réseau contenu par votre FlexPod.
+
+.. Sélectionnez chaque périphérique faisant partie de la configuration FlexPod.
++
+
+TIP: Lorsque vous sélectionnez un périphérique, la colonne éligibilité affiche *éligible* ou *non éligible*. Un périphérique n'est pas éligible s'il a été découvert par un autre agent.
+
++
+Une fois tous les composants requis sélectionnés, une coche verte s'affiche en regard de chaque type de périphérique.
+
++
+image:screenshot_add_infrastructure_pikesupdate.gif["Affiche quatre périphériques sélectionnés dans la table et des coches vertes pour chacun, ce qui indique que vous avez sélectionné tous les composants requis."]
+
+.. Ajoutez votre link:concept_licensing.html["Numéro de série de Converged Systems Advisor"] pour déverrouiller la fonctionnalité des touches.
+.. Passez en revue le résumé, acceptez les termes du contrat de licence et cliquez sur *Ajouter une infrastructure*.
+
+
+
+
+Converged Systems Advisor ajoute l'infrastructure au portail et commence à collecter les données de configuration sur chaque périphérique. Attendez quelques minutes pour que l'agent collecte des informations sur les périphériques.
+
+
+
+== Partage d'une infrastructure avec d'autres utilisateurs
+
+Le partage d'une infrastructure convergée permet à une autre personne de se connecter au portail Converged Systems Advisor pour qu'elle puisse afficher et contrôler la configuration. La personne avec laquelle vous partagez l'infrastructure doit avoir un https://mysupport.netapp.com["Site de support NetApp"^] compte.
+
+.Étapes
+. Dans le portail Converged Systems Advisor, cliquez sur l'icône *Paramètres*, puis sur *utilisateurs*.
++
+image:screenshot_settings.gif["Affiche le menu des paramètres, qui contient un lien vers la page utilisateurs."]
+
+. Sélectionnez la configuration dans le tableau utilisateur.
+. Cliquez sur le bouton image:screenshot_share_icon.gif["Icône de partage d'infrastructure."] icône.
+. Saisissez une ou plusieurs adresses e-mail en regard du rôle d'utilisateur que vous souhaitez fournir.
++
+link:reference_user_roles.html["Afficher les différences entre chaque rôle"].
+
++
+
+TIP: Vous pouvez entrer plusieurs adresses e-mail dans un seul champ en appuyant sur *entrée* après la première adresse e-mail.
+
+. Cliquez sur *Envoyer*.
+
+
+L'utilisateur doit recevoir un e-mail contenant les instructions pour accéder à Converged Systems Advisor.
+
+
+
+== Octroi de privilèges utilisateur CSA à l'aide d'un serveur TACACS+
+
+Si vous utilisez un serveur TACACS+ et que vous devez accorder des privilèges d'utilisateur CSA à vos commutateurs, vous devez créer un groupe de privilèges d'utilisateur et accorder au groupe l'accès aux commandes de configuration spécifiques requises par CSA.
+
+Les commandes suivantes doivent être écrites dans le fichier de configuration de votre serveur TACACS+.
+
+.Étapes
+. Entrez ce qui suit pour créer un groupe de privilèges d'utilisateur avec accès en lecture seule : group=group_name { default service=Deny service=exec{ priv-lvl=0 }
+. Entrez ce qui suit pour autoriser l'accès aux commandes requises par CSA : mgcmd=show { permit « environment » permit « version » permit « feature-set » permit « feature-set » permit « license usage » permit « port-channel » permit « interface transceiver » permit « interface » permit « licence » autorise « module » autorise « port-channel » permit « port-config » permit « under » « détails des voisins cdp » permis « vlan » permis « vpc » permis « vpc peer-keepalive » permis « table-adresses mac » permis « policy-map » autorisation « policy-map » autorisation « policy-map system type qos » permis « policy-map system type queue » autorisation « policy-map system type network-qos » autorisation « zonset-port » autorisation « base de base de données » autorisation « table » autoriser "zonset actif" permettre "vsan" autoriser "vsan usage" permettre "vsan adhérent" }
+. Entrez ce qui suit pour ajouter votre compte d'utilisateur CSA au nouveau groupe : user=compte_utilisateur{ membre=nom_groupe login=fichier/etc/passwd }
+
+
+
+
+== Configuration des notifications
+
+Si vous disposez d'une licence Premium, Converged Systems Advisor vous informe des modifications apportées à votre infrastructure FlexPod par l'intermédiaire de notifications par e-mail.
+
+.Étapes
+. Dans le portail Converged Systems Advisor, cliquez sur l'icône *Paramètres*, puis sur *Paramètres d'alerte*.
+. Cochez la notification que vous souhaitez recevoir pour chaque infrastructure convergée avec une licence Premium.
++
+Chaque notification comprend les informations suivantes :
+
++
+Échecs de collecte:: Vous avertit lorsque Converged Systems Advisor ne peut pas collecter de données dans une infrastructure convergée.
+Agent hors ligne:: Vous alerte lorsqu'un agent Converged Systems Advisor n'est pas en ligne.
+Résumé quotidien des alertes:: Vous signale les échecs de règles qui se sont produits le jour précédent.
+
+
+. Cliquez sur *Enregistrer*.
+
+
+Converged Systems Advisor enverra désormais des notifications par e-mail aux utilisateurs associés à l'infrastructure convergée.

@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: task_prepare_environment.html 
+keywords: prepare, environment, verifying, support, accounts, account, configuration, registering, FlexPod, VMware, ESXi server, connection, connectivity, agent, portal 
+summary: Pour commencer à utiliser Converged Systems Advisor, vous devez préparer votre environnement. 
+---
+= Préparez votre environnement
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour commencer à utiliser Converged Systems Advisor, vous devez préparer votre environnement. La préparation de votre environnement comprend la vérification du support pour votre configuration et la création d'un compte sur le site de support NetApp.
+
+Vous pouvez vouloir le faire link:concept_architecture.html["Découvrez le fonctionnement de Converged Systems Advisor"] avant de commencer.
+
+.Étapes
+. Vérifier le support dans http://mysupport.netapp.com/matrix["Matrice d'interopérabilité NetApp"^]:
++
+.. Vérifiez que Converged Systems Advisor prend en charge l'infrastructure convergée FlexPod.
+.. Vérifiez que vous disposez d'un serveur VMware ESXi pris en charge par l'agent Converged Systems Advisor.
++
+Pour réduire l'utilisation de la bande passante, NetApp recommande d'installer l'agent dans le même data Center que l'infrastructure convergée FlexPod.
+
+
+
+. Assurez-vous que le réseau dans lequel vous installez l'agent autorise la connectivité entre les composants :
++
+** L'agent doit être connecté à chaque composant FlexPod afin qu'il puisse collecter des données de configuration.
+** L'agent nécessite également une connexion Internet sortante pour communiquer avec les noeuds finaux suivants :
++
+*** csa.netapp.com
+*** docker.com
+*** docker.io
+
+
+
+
+. Accédez au https://mysupport.netapp.com["Site de support NetApp"^] et vous inscrire pour créer un compte, si vous n'en avez pas.
++
+Un compte sur le site de support NetApp est nécessaire pour configurer l'agent et accéder au portail.
+
+

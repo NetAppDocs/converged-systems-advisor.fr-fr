@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: reference_new.html 
+keywords: 'new, features, what"s new, enhancements, release notes' 
+summary: NetApp met régulièrement à jour Converged Systems Advisor pour vous apporter de nouvelles fonctionnalités, améliorations et correctifs. 
+---
+= Nouveautés de Converged Systems Advisor
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp met régulièrement à jour Converged Systems Advisor pour vous apporter de nouvelles fonctionnalités, améliorations et correctifs.
+
+Pour vérifier que les composants FlexPod sont pris en charge par l'agent CSA, reportez-vous à la http://mysupport.netapp.com/matrix["Matrice d'interopérabilité NetApp"^] (IMT).
+
+
+
+== 31 juillet 2020
+
+La version inclut plusieurs améliorations :
+
+*  functionality for storage change detection (diffs)
+*  configuration assurance for cluster interconnect switches
+*  coverage of NVMe designs
+
+
+
+
+== Nouvelle fonctionnalité de détection des modifications de stockage (difffs)
+
+Vous pouvez à présent détecter les modifications qui se sont produites sur le système de stockage. Pour vérifier la modification, dans les pages *Storage Inventory*, cliquez sur *View Configuration Difference*. Sélectionnez ensuite une heure et des données de configuration précédentes, qui seront comparées à la configuration de stockage la plus récente. Toute modification qui s'est produite sera mise en évidence pour un examen rapide.
+
+
+
+== Configuration étendue de la garantie pour les commutateurs d'interconnexion de cluster
+
+Sur le portail Converged Systems Advisor, les vérifications de l'assurance configuration ont été étendues pour surveiller la prise en charge du basculement d'interconnexion de cluster ONTAP sur les modèles suivants :
+
+* Cisco Nexus 3132Q-V
+* Cisco Nexus 3232C
+* Cisco Nexus 92300YC
+
+
+
+
+== Couverture initiale des designs NVMe
+
+Les vérifications initiales de l'assurance configuration ont été ajoutées pour surveiller la prise en charge des conceptions de stockage ONTAP NVMe dans FlexPod.

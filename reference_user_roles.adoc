@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: reference_user_roles.html 
+keywords: read only, write, owner, privileges, access, security, roles 
+summary: 'Lorsque vous partagez une infrastructure convergée avec un autre utilisateur, vous pouvez fournir des privilèges de lecture seule, d"écriture ou de propriétaire.' 
+---
+= Rôles utilisateur
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous partagez une infrastructure convergée avec un autre utilisateur, vous devez fournir des privilèges de lecture seule, d'écriture ou de propriétaire.
+
+Le tableau suivant identifie les tâches que chaque rôle d'utilisateur peut effectuer.
+
+[cols="25,25,25,25"]
+|===
+| Tâche | Lecture seule | Écriture | Propriétaire 
+
+
+| Afficher un système | Oui. | Oui. | Oui. 
+
+
+| Mettre à jour le nom d'un système | Non | Oui. | Oui. 
+
+
+| Mettre à jour les détails du contrat de support | Non | Oui. | Oui. 
+
+
+| Modifiez l'intervalle de collecte des données | Non | Oui. | Oui. 
+
+
+| Demander une nouvelle collecte de données | Non | Oui. | Oui. 
+
+
+| Partager un système | Non | Oui, avec accès en lecture seule ou en écriture | Oui, avec accès en lecture seule, en écriture ou au propriétaire 
+
+
+| Modifier les composants d'un système | Non | Non | Oui. 
+
+
+| Supprimer un système | Non | Non | Oui. 
+|===

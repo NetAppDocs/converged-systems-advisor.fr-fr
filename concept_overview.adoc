@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: concept_overview.html 
+keywords: converged systems advisor, netapp, overview, concepts, features, use case, video, value 
+summary: 'Converged Systems Advisor valide le déploiement de votre infrastructure FlexPod et fournit des fonctionnalités de contrôle et de notification en continu pour assurer la continuité de l"activité.' 
+---
+= Présentation de Converged Systems Advisor
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor valide le déploiement de votre infrastructure FlexPod et fournit des fonctionnalités de contrôle et de notification en continu pour assurer la continuité de l'activité.
+
+Pour une présentation de Converged Systems Advisor, visionnez la vidéo :
+
+video::CZHu0Xp33BY[youtube,width=848,height=480]
+Pour en savoir plus sur la valeur ajoutée apportée par Converged Systems Advisor, https://www.netapp.com/us/media/ds-3896.pdf["lire la fiche technique"^].

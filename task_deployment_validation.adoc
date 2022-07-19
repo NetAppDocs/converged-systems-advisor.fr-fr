@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: task_deployment_validation.html 
+keywords: partner, validate, deployment validation 
+summary: 'Si vous êtes un partenaire NetApp, vous pouvez vous lancer avec Converged Systems Advisor en travaillant avec votre client pour déployer l"agent et configurer le portail avant de valider le déploiement.' 
+---
+= Rapport de validation de déploiement pour les partenaires
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Les partenaires NetApp peuvent valider le déploiement pour vérifier qu'une infrastructure convergée FlexPod est correctement configurée. Les partenaires peuvent ensuite communiquer le rapport aux clients.
+
+.Étapes
+. Connectez-vous au https://csa.netapp.com/["Portail Converged Systems Advisor"^].
+. Développez la configuration du client à partir de la liste des clients.
++
+image:screenshot_partner_customer_list.gif["Présente trois infrastructures convergées pour un client."]
+
+. Sous Rapport de validation de déploiement, cliquez sur *generate*.
+. Choisissez d'afficher le rapport dans votre navigateur, au format PDF ou par e-mail.
+. Passez en revue le rapport et corrigez tous les problèmes d'interopérabilité et les erreurs de validation du déploiement.
++
+*Exemple*
+
++
+Dans cet exemple de configuration, les versions de firmware des commutateurs Nexus ne sont pas prises en charge :
+
++
+image:screenshot_validation_interop.gif["La présente la section interopérabilité du rapport de validation du déploiement. Il inclut deux commutateurs avec des versions de micrologiciel non prises en charge."]
+
++
+Quatre règles de validation ont également échoué en raison de problèmes de connectivité du commutateur :
+
++
+image:screenshot_validation_errors.gif["La présente la section erreurs du rapport de validation du déploiement. L'interconnexion de structure ne fait pas de liaison ascendante dans la structure Nexus Fibre Channel correspondante."]
+
++
+La mise à niveau du micrologiciel peut corriger l'interopérabilité de la configuration et l'ajout de liens peut corriger les règles de validation ayant échoué.
+
+. Après avoir corrigé les problèmes, collectez les données pour que Converged Systems Advisor dispose des données de configuration les plus récentes :
++
+.. Sélectionnez l'infrastructure convergée.
+.. Dans le coin supérieur droit, cliquez sur *collect*.
++
+image:screenshot_collect_button.gif["La montre le bouton collecter situé en haut à droite de l'écran, disponible après la sélection d'une infrastructure convergée."]
+
+
+
+. Générez à nouveau le rapport pour vérifier que vous avez corrigé les problèmes.
+. Envoyez le rapport final de validation du déploiement à votre client.
+
+
+L'infrastructure convergée est désormais configurée selon les meilleures pratiques.

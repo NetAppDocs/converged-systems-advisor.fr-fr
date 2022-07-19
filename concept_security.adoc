@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: concept_security.html 
+keywords: security, data, transfer, privacy, encrypted, encryption, https, tls, customer, business 
+summary: Converged Systems Advisor collecte des données de configuration sur votre infrastructure convergée FlexPod pour vous aider à valider et à contrôler le système. Il serait intéressant pour vous de comprendre comment les données sont collectées, comment elles sont transférées vers NetApp et comment elles sont conservées en toute sécurité et confidentialité. 
+---
+= Sécurité
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Converged Systems Advisor collecte des données de configuration sur votre infrastructure convergée FlexPod pour vous aider à valider et à contrôler le système. Il serait intéressant pour vous de comprendre comment les données sont collectées, comment elles sont transférées vers NetApp et comment elles sont conservées en toute sécurité et confidentialité.
+
+
+
+== Mode de collecte des données
+
+L'agent Converged Systems Advisor requiert des informations d'identification pour accéder aux dispositifs de votre infrastructure convergée FlexPod. Des identifiants en lecture seule sont requis pour les switchs Cisco UCS et Nexus, tandis que les identifiants d'administrateur sont requis pour ONTAP. Les identifiants sont chiffrés et stockés localement sur l'agent, mais ne sont pas envoyés au portail dans le cloud.
+
+Une fois les informations d'identification fournies, l'agent recueille les données _configuration_ des périphériques. _Client_ les données qui résident sur les périphériques ne sont jamais consultées ou transférées. Un échantillon représentatif des données de configuration collectées par l'agent comprend les éléments suivants :
+
+* Puissance
+* Processeur et mémoire
+* Connectivité des périphériques
+* Noms et ID de périphériques
+* État du périphérique
+* Versions du micrologiciel
+* Adresses IP
+* Cibles iSCSI
+* Licences
+* Adresses MAC
+* Numéros de modèle
+* Numéros de série
+
+
+
+
+== Mode de transfert des données
+
+Une fois que l'agent détecte les données de configuration de votre infrastructure convergée FlexPod, il les envoie vers le portail Converged Systems Advisor via HTTPS. La communication est chiffrée à l'aide du certificat TLS 1.2 de NetApp.
+
+image:diagram_data_transfer.gif["La présente une connexion HTTPS chiffrée entre l'agent et le portail."]
+
+
+
+== Comment les données sont conservées en toute sécurité et privées
+
+Les données de configuration résident sur le réseau NetApp et sont gérées par LE SERVICE IT de NetApp. Les données sont sécurisées par une couche d'accès aux données qui nécessite une identification positive de chaque utilisateur qui demande l'accès.
+
+L'utilisateur qui a déployé l'agent peut accéder aux données à partir du portail Converged Systems Advisor en se connectant avec un compte du site de support NetApp. Cet utilisateur dispose de privilèges _propriétaire_ pour l'infrastructure convergée. Le propriétaire peut partager l'infrastructure convergée avec d'autres utilisateurs en accordant des privilèges de lecture seule, d'écriture ou de propriétaire. Les utilisateurs doivent également disposer d'un compte enregistré sur le site de support NetApp pour se connecter au portail.
+
+link:reference_user_roles.html["Examinez les différences entre les privilèges de lecture seule, d'écriture et de propriétaire"].

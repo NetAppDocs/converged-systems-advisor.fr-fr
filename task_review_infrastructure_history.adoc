@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task_review_infrastructure_history.html 
+keywords: review, history, converged, infrastructure, configuration, resolve, issue, warnings, failures, collected, collections, data 
+summary: Lorsque vous recevez une alerte concernant une règle ayant échoué, vous pouvez afficher un historique de ce qui a été modifié dans la configuration pour vous aider à résoudre le problème. 
+---
+= Passez en revue l'historique d'une infrastructure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous recevez une alerte concernant une règle ayant échoué, vous pouvez afficher un historique de ce qui a été modifié dans la configuration pour vous aider à résoudre le problème.
+
+.Étapes
+. Sélectionnez une infrastructure convergée.
+. Cliquez sur *plus > Historique*.
++
+image:screenshot_history_navigation.gif["Affiche le menu plus qui inclut l'option Historique."]
+
+. Cliquez sur un jour du calendrier pour afficher le nombre d'avertissements et d'échecs identifiés lors de chaque collecte de données.
++
+
+TIP: Le nombre qui s'affiche pour chaque jour correspond au nombre de fois que l'agent a collecté des données. Par exemple, si vous conservez l'intervalle de collecte par défaut de 24 heures, vous devriez voir une collection par jour.
+
++
+L'image suivante montre une seule collection le 27 du mois.
+
++
+image:screenshot_history_status.gif["Affiche le numéro un et un point jaune le 27 du mois."]
+
+. Pour afficher plus de détails sur les données collectées, cliquez sur *accéder au tableau de bord ci* pour une collection.
+. Si nécessaire, affichez l'historique pour la dernière fois qu'aucun avertissement ou échec n'a été identifié.
++
+La comparaison des données entre les deux périodes de collecte peut vous aider à identifier ce qui a changé.
+
+

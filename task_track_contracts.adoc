@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: task_track_contracts.html 
+keywords: track, support, contracts, renew, converged, infrastructure, device, devices, 
+summary: 'Vous pouvez ajouter des détails sur les contrats d"assistance pour chaque périphérique dans une configuration, y compris la date de début, la date de fin et l"ID du contrat.' 
+---
+= Suivi des contrats de support
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez ajouter des détails sur les contrats d'assistance pour chaque périphérique dans une configuration : date de début, date de fin et ID de contrat. Cela vous permet de suivre facilement les détails dans un emplacement central afin de savoir quand renouveler les contrats de support pour chaque appareil.
+
+.Étapes
+. Cliquez sur *Sélectionner un EC* et sélectionnez l'infrastructure convergée.
+. Dans le widget Contrat de support, cliquez sur l'icône *Modifier contrat*.
+. Sélectionnez *Date de début* et *Date de fin* et saisissez *ID du contrat*.
+. Cliquez sur *soumettre*.
+. Répétez les étapes pour chaque périphérique de la configuration.
+
+
+Converged Systems Advisor affiche désormais les détails du contrat de support pour chaque appareil. Vous pouvez facilement voir quels périphériques ont des contrats de support actifs et expirés.
+
+image:screenshot_support_contracts.gif["Indique quatre contrats de support : l'un a expiré et les trois autres sont actifs."]

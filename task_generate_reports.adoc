@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: task_generate_reports.html 
+keywords: generate, report, reports, converged, infrastructure, health, inventory, assessment, deployment, validation, partners, issues, configured, configuration, interoperability, downloaded, PDF, email 
+summary: 'Vous pouvez générer plusieurs types de rapports, tels qu"un rapport d"intégrité ou un rapport de validation de déploiement pour les partenaires.' 
+---
+= Générer des rapports
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous disposez d'une licence Premium, vous pouvez générer plusieurs types de rapports qui fournissent des informations sur l'état actuel de votre infrastructure convergée : rapport d'inventaire, rapport d'état, rapport d'évaluation, rapport de validation de déploiement pour les partenaires, etc.
+
+.Étapes
+. Cliquez sur *Rapports*.
+. Sélectionnez un rapport et cliquez sur *générer*.
+. Choisissez vos options pour le rapport :
++
+.. Sélectionnez une infrastructure convergée.
+.. Vous pouvez éventuellement passer de la collecte de données la plus récente à une collecte précédente.
+.. Choisissez comment vous souhaitez afficher le rapport : dans votre navigateur, au format PDF téléchargé ou par e-mail.
++
+image:screenshot_reports_generate.gif["Présente les options de génération d'un rapport, notamment le choix d'une infrastructure convergée et d'un instantané, puis le mode de visualisation souhaité."]
+
+
+
+
+
+Converged Systems Advisor génère le rapport.

@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: task_deployment_validation_partners_resellers.html 
+keywords: review, alerts, warnings, failed, rules, alerts, history, remediate, remediation, suppress, display, fail, warning, pass, notifications, email 
+summary: 'En tant que partenaire ou revendeur, vous pouvez valider le déploiement de l"infrastructure d"un client.' 
+---
+= Valider le déploiement pour les partenaires et les revendeurs
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+En tant que partenaire ou revendeur, vous pouvez valider le déploiement de l'infrastructure de votre client en vérifiant les données affichées dans le tableau de bord ou en générant un rapport d'état.
+
+.Avant de commencer
+* Vous avez installé un nouveau FlexPod sur le site de votre client ou vous travaillez avec un FlexPod existant.
+* Vous avez créé des comptes sur des terminaux FlexPod.
+* Si vous utilisez un serveur TACACS+, vous avez accordé des privilèges d'utilisateur CSA.
+* Vous avez téléchargé et installé l'agent.
++
+Reportez-vous à la section link:task_setup_deploy_agent.html["Configurez et déployez l'agent"].
+
+* Vous configurez la mise en réseau de l'agent et, éventuellement, vous avez installé un certificat SSL sur l'agent.
+* Vous avez créé l'infrastructure convergée avec vos identifiants NetApp afin que votre client puisse l'ajouter au portail.
++
+Reportez-vous à la section link:task_add_infrastructure["Ajouter une infrastructure au portail"] Pour créer un EC dans le portail CSA.
+
+* Vous avez éventuellement partagé l'infrastructure avec d'autres utilisateurs.
+
+
+Les partenaires et les revendeurs utilisent leurs propres identifiants NetApp pour se connecter au portail CSA et lancer le processus de validation.
+
+. Connectez-vous au https://csa.netapp.com/["Portail Converged Systems Advisor"^] Avec vos identifiants NetApp.
+. Cliquez sur *Sélectionner un EC*, puis cliquez sur l'EC approprié pour le client ou saisissez le nom de l'EC dans la zone de recherche. Le tableau de bord de l'EC s'affiche.
+
+
+En tant que partenaire ou revendeur, vous pouvez valider l'infrastructure de votre client à l'aide des méthodes suivantes :
+
+* Le tableau de bord permet de valider différents aspects de l'infrastructure :
++
+** *Firmware Interoperability* affiche les versions de logiciel installées. Cliquez sur chaque en-tête pour afficher des détails supplémentaires.
+** *Contrat de support* indique quand les contrats expirent. Cliquez sur *Afficher les détails* pour plus d'informations.
+** *Etat de l'agent* affiche des détails sur l'agent, y compris les périphériques surveillés.
+** *Capacity* indique l'utilisation de l'espace disque, des ports réseau et du châssis lame UCS. Cliquez sur les liens pour afficher les détails de chaque utilisation.
+** *Health* affiche graphiquement l'état des règles pour les capacités de stockage, de calcul, de réseau et de virtualisation de l'infrastructure. Cliquez sur les zones de couleur des graphiques pour afficher des détails supplémentaires.
+** *Résumé des règles* affiche des alertes pour les règles et les avertissements en échec. Cliquez sur les flèches à gauche de chaque ligne ou cliquez sur le nom du périphérique pour afficher des informations supplémentaires.
+
+
+* Dans la barre d'actions, sélectionnez *Rapports-> Rapport de santé* pour générer un rapport détaillé sur l'état du système convergé. Vous pouvez l'afficher dans le navigateur, le télécharger au format PDF ou le partager par e-mail.
+

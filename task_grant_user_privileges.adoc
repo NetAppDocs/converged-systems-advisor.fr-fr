@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: task_grant_user_privileges.html 
+keywords: grant, user, privileges, TACACS+, server, group, command, commands, access, CSA, user, account 
+summary: 'Si vous utilisez un serveur TACACS+ et que vous devez accorder des privilèges d"utilisateur CSA à vos commutateurs, vous devez créer un groupe de privilèges d"utilisateur et accorder au groupe l"accès aux commandes de configuration spécifiques requises par CSA.' 
+---
+= Accordez des privilèges utilisateur CSA à l'aide d'un serveur TACACS+
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous utilisez un serveur TACACS+ et que vous devez accorder des privilèges d'utilisateur CSA à vos commutateurs, vous devez créer un groupe de privilèges d'utilisateur et accorder au groupe l'accès aux commandes de configuration spécifiques requises par CSA. Les commandes suivantes doivent être écrites dans le fichier de configuration de votre serveur TACACS+.
+
+.Étapes
+. Entrez ce qui suit pour créer un groupe de privilèges d'utilisateur avec accès en lecture seule : group=group_name { default service=Deny service=exec{ priv-lvl=0 }
+. Entrez ce qui suit pour autoriser l'accès aux commandes requises par CSA : mgcmd=show { permit « environment » permit « version » permit « feature-set » permit « feature-set » permit « license usage » permit « port-channel » permit « interface transceiver » permit « interface » permit « licence » autorise « module » autorise « port-channel » permit « port-config » permit « under » « détails des voisins cdp » permis « vlan » permis « vpc » permis « vpc peer-keepalive » permis « table-adresses mac » permis « policy-map » autorisation « policy-map » autorisation « policy-map system type qos » permis « policy-map system type queue » autorisation « policy-map system type network-qos » autorisation « zonset-port » autorisation « base de base de données » autorisation « table » autoriser "zonset actif" permettre "vsan" autoriser "vsan usage" permettre "vsan adhérent" }
+. Entrez ce qui suit pour ajouter votre compte d'utilisateur CSA au nouveau groupe : user=compte_utilisateur{ membre=nom_groupe login=fichier/etc/passwd }
+
