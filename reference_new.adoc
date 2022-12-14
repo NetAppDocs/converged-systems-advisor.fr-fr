@@ -24,9 +24,9 @@ Pour vérifier que les composants FlexPod sont pris en charge par l'agent CSA, r
 
 La version inclut plusieurs améliorations :
 
-*  functionality for storage change detection (diffs)
-*  configuration assurance for cluster interconnect switches
-*  coverage of NVMe designs
+* <<Nouvelle fonctionnalité de détection des modifications de stockage (difffs)>>
+* <<Configuration étendue de la garantie pour les commutateurs d'interconnexion de cluster>>
+* <<Couverture initiale des designs NVMe>>
 
 
 

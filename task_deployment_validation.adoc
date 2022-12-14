@@ -56,4 +56,5 @@ image:screenshot_collect_button.gif["La montre le bouton collecter situé en hau
 . Envoyez le rapport final de validation du déploiement à votre client.
 
 
+.Résultat
 L'infrastructure convergée est désormais configurée selon les meilleures pratiques.

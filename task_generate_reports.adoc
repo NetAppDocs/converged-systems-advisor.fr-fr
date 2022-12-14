@@ -31,4 +31,5 @@ image:screenshot_reports_generate.gif["Présente les options de génération d'u
 
 
 
+.Résultat
 Converged Systems Advisor génère le rapport.

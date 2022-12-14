@@ -15,12 +15,12 @@ summary: Pour commencer, configurez des comptes pour les terminaux FlexPod.
 
 Pour commencer, configurez des comptes pour les appareils FlexPod :
 
-*  a read-only account for Cisco UCS Manager
-*  a read-only account for Nexus switches
-*  an admin account for ONTAP
-*  a read-only account for VMware
-*  a read-only account on the APIC
-*  CSA user privileges using a TACACS+ server
+* <<Créez un compte en lecture seule pour Cisco UCS Manager>>
+* <<Créez un compte en lecture seule pour les commutateurs Nexus>>
+* <<Créez un compte admin pour ONTAP>>
+* <<Créez un compte en lecture seule pour VMware>>
+* <<Créez un compte en lecture seule sur le contrôleur APIC>>
+* <<Accordez des privilèges utilisateur CSA à l'aide d'un serveur TACACS+>>
 
 
 L'agent utilise ces comptes pour recueillir des informations de configuration de chaque périphérique.

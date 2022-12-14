@@ -17,10 +17,10 @@ summary: 'Déployez l"agent Converged Systems Advisor sur un serveur VMware ESXi
 Vous devez déployer l'agent Converged Systems Advisor sur un serveur VMware ESXi. L'agent collecte des données de configuration sur chaque système de votre infrastructure convergée FlexPod et les envoie vers le portail Converged Systems Advisor.
 
 .Étapes
-.  and install the agent
-.  up networking for the agent
-.  an SSL certificate on the agent
-.  the agent to discover your FlexPod infrastructure
+. <<Téléchargez et installez l'agent>>
+. <<Configurer la mise en réseau de l'agent>>
+. <<Installez un certificat SSL sur l'agent>>
+. <<Configurez l'agent pour découvrir votre infrastructure FlexPod>>
 
 
 
@@ -29,6 +29,7 @@ Vous devez déployer l'agent Converged Systems Advisor sur un serveur VMware ESX
 
 Vous devez déployer l'agent Converged Systems Advisor sur un serveur VMware ESXi.
 
+.Description de la tâche
 Pour réduire l'utilisation de la bande passante, vous devez installer l'agent sur un serveur VMware ESXi situé dans le même centre de données que la configuration FlexPod. L'agent doit être connecté à chaque composant FlexPod et à Internet afin que les données de configuration puissent être envoyées au portail Converged Systems Advisor via le port HTTPS 443.
 
 L'agent est déployé en tant que machine virtuelle VMware vSphere à partir d'un modèle OVF (Open Virtualization format). Le modèle est basé sur Debian avec 1 CPU virtuel et 2 Go de RAM (plus peut être nécessaire pour les systèmes FlexPod multiples ou plus grands).
@@ -117,6 +118,7 @@ Facultatif : si nécessaire, installez un certificat SSL sur l'agent.
 
 L'agent crée un certificat auto-signé lors du premier démarrage de la machine virtuelle. Si nécessaire, vous pouvez supprimer ce certificat et utiliser votre propre certificat SSL.
 
+.Description de la tâche
 Converged Systems Advisor prend en charge : * tout chiffrement compatible avec OpenSSL version 1.0.1 ou ultérieure * TLS 1.1 et TLS 1.2
 
 .Étapes
@@ -154,4 +156,5 @@ Remarque : * le nom d'utilisateur et le mot de passe doivent correspondre au com
 
 
 
+.Résultat
 Chaque périphérique de l'infrastructure FlexPod doit être coché dans le tableau.image:screenshot_agent_configuration.gif["Affiche chaque périphérique requis avec une coche verte dans la colonne État."]

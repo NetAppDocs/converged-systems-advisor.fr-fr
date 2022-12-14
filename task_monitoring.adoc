@@ -37,10 +37,11 @@ image:screenshot_rules_information.gif["Affiche des détails sur une règle, y c
 
 . Suivez les instructions de résolution pour résoudre le problème.
 +
-Si besoin,  the history for an infrastructure,passez en revue l'historique de la configuration pour que l'infrastructure vous aide à résoudre le problème.
+Si besoin, <<Révision de l'historique d'une infrastructure,passez en revue l'historique de la configuration>> pour que l'infrastructure vous aide à résoudre le problème.
 
 
 
+.Une fois que vous avez terminé
 Le statut des règles que vous avez abordées doit s'afficher en tant que réussite après la prochaine période de collecte de l'agent.
 
 
@@ -86,6 +87,7 @@ Converged Systems Advisor vous permet de supprimer des règles. Ainsi, vous n'af
 
 Par exemple, l'activation de telnet n'est pas recommandée, mais si vous préférez l'activer, vous pouvez supprimer la règle.
 
+.Description de la tâche
 Vous devez disposer de la licence Premium pour configurer les notifications.
 
 .Étapes
@@ -101,6 +103,7 @@ image:screenshot_rules_suppress.gif["Affiche l'icône d'alertes au-dessus du tab
 
 TIP: Si vous souhaitez activer les alertes, suivez les mêmes étapes et sélectionnez *End Suppression*.
 
+.Résultat
 Converged Systems Advisor ne vous informe plus de la règle pendant la durée spécifiée et la règle ne sera plus visible dans le tableau de bord.
 
 
@@ -122,6 +125,7 @@ image:screenshot_rules_suppress.gif["Affiche l'icône d'alertes au-dessus du tab
 . Sélectionnez *End Suppression*, puis cliquez sur *Submit*.
 
 
+.Résultat
 Les alertes sont activées pour la règle sélectionnée et la règle est affichée dans le tableau de bord et le tableau de bord règles.
 
 
@@ -175,6 +179,7 @@ image:screenshot_reports_generate.gif["Présente les options de génération d'u
 
 
 
+.Résultat
 Converged Systems Advisor génère le rapport.
 
 
@@ -191,6 +196,7 @@ Vous pouvez ajouter des détails sur les contrats d'assistance pour chaque péri
 . Répétez les étapes pour chaque périphérique de la configuration.
 
 
+.Résultat
 Converged Systems Advisor affiche désormais les détails du contrat de support pour chaque appareil. Vous pouvez facilement voir quels périphériques ont des contrats de support actifs et expirés.
 
 image:screenshot_support_contracts.gif["Indique quatre contrats de support : l'un a expiré et les trois autres sont actifs."]

@@ -31,4 +31,5 @@ Résumé quotidien des alertes:: Vous signale les échecs de règles qui se sont
 . Cliquez sur *Enregistrer*.
 
 
+.Résultat
 Converged Systems Advisor enverra désormais des notifications par e-mail aux utilisateurs associés à l'infrastructure convergée.

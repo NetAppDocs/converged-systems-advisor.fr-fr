@@ -77,7 +77,6 @@
   <block id="73a4aebaeec211620a602108d2b9404c" category="list-text">Entrez ce qui suit pour ajouter votre compte d'utilisateur CSA au nouveau groupe : user=compte_utilisateur{ membre=nom_groupe login=fichier/etc/passwd }</block>
   <block id="7a49965d9cfff28dae6c97f9b420a932" category="summary">NetApp Converged Systems Advisor valide, surveille et optimise le déploiement de votre infrastructure convergée FlexPod afin d'assurer la performance et la disponibilité optimales pour vos applications métier.</block>
   <block id="04fbad68af42342b74d64c44c053aeb6" category="doc">Converged Systems Advisor</block>
-  <block id="1fde0727b387439572ade83eecff4f68" category="section-title">Découvrez les nouveautés</block>
   <block id="9019b4a8afd649f588dde381d9d2c1cb" category="inline-link-macro">Nouveautés du Converged Systems Advisor</block>
   <block id="cfaf20a40a53abf04e998d745a541106" category="paragraph"><block ref="cfaf20a40a53abf04e998d745a541106" category="inline-link-macro-rx"></block></block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="section-title">Commencez</block>
@@ -486,18 +485,15 @@
   <block id="d765707c3b28b87a0166a122e0893c44" category="doc">Démarrage rapide de Converged Systems Advisor</block>
   <block id="bb4e793023539d2e73eea517a0009f8f" category="paragraph">La mise en route du portail et de l'agent Converged Systems Advisor pour FlexPod comprend quelques étapes.</block>
   <block id="861d7392cf2a3c7ca2ed1442f6237101" category="paragraph">Vérifiez la prise en charge de votre configuration. <block ref="5db18581d3c751db9049195c8f5e0955" category="inline-link-macro-rx"></block>.</block>
-  <block id="005c54fa8a7e7bd788a9d809d1387a85" category="section-title">Créez des comptes sur les terminaux FlexPod</block>
   <block id="2f166ccfcdb92d24539f300510b6c06a" category="inline-link-macro">Créez des comptes sur les terminaux FlexPod</block>
   <block id="ef53b42f68445a3ad4051becb0f15d0a" category="paragraph">Configurez des comptes dans Cisco UCS Manager, sur vos commutateurs Cisco Nexus, pour vos systèmes ONTAP, pour VMware et pour le contrôleur APIC. Ces comptes sont utilisés par l'agent pour collecter les données de configuration.<block ref="3431097fc9e072fa942c7d7d18ec5a22" category="inline-link-macro-rx"></block>.</block>
   <block id="2c1c5cb63f66b3d5b5f4eeb79a858979" category="paragraph">Pour ceux qui utilisent un serveur TACACS+, vous devez accorder des privilèges d'utilisateur CSA pour vos commutateurs, créer un groupe de privilèges d'utilisateur et accorder au groupe l'accès aux commandes de configuration spécifiques requises par CSA.<block ref="4c9d56d5e4670c50abdba1f72cb4866c" category="inline-link-macro-rx"></block></block>
   <block id="c0fb3c98adaf760968c2a76d78a5b482" category="inline-link-macro">Déployez l'agent</block>
   <block id="0550cf7fd37a5b054ce87062df5f3254" category="paragraph">Déployez l'agent Converged Systems Advisor sur un serveur VMware ESXi. L'agent collecte des données de configuration sur chaque système de votre infrastructure convergée FlexPod et les envoie vers le portail Converged Systems Advisor.<block ref="96f9770b130e3bbf775f182c9ade7098" category="inline-link-macro-rx"></block>.</block>
-  <block id="0d68d2879e160e76749e7cf93c2fa146" category="section-title">Ajouter/partager une infrastructure dans le portail</block>
   <block id="19262993c294a1c73c8ae843e52a78f8" category="inline-link-macro">Ajouter et partager l'infrastructure dans le portail</block>
   <block id="98e6f4726c519b5915a8c7eda3e7406d" category="paragraph">Ajoutez chaque périphérique FlexPod au portail Converged Systems Advisor pour créer une infrastructure complète que vous pouvez surveiller. Vous pouvez également partager une infrastructure convergée pour permettre à une autre personne de se connecter au portail, afin qu'elle puisse afficher et contrôler la configuration.<block ref="8650b55bc84e39256db0ba998f0a5b40" category="inline-link-macro-rx"></block>.</block>
   <block id="19a5158f1235c29843008925adb7baf8" category="section-title">Configurez les notifications</block>
   <block id="68b25f35698ade6b2d3fe83dec7cf861" category="paragraph">Avec une licence Premium, vous pouvez configurer des notifications qui vous signalent les modifications apportées à votre infrastructure FlexPod par le biais de notifications électroniques.<block ref="ebe1a4d3225f5bb69764eba03129edce" category="inline-link-macro-rx"></block></block>
-  <block id="b44a488d2f5dc6040330205f250e7850" category="section-title">Définissez une adresse IP statique</block>
   <block id="bb970f20a14446757048e71ed32f976f" category="inline-link-macro">Définissez une adresse IP statique sur l'agent</block>
   <block id="db15846e3abf8485dbf81a496e64d90a" category="paragraph">Si votre environnement ne dispose pas d'un serveur DHCP, vous pouvez définir une adresse IP statique sur l'agent Converged Systems Advisor.<block ref="708dd38422a6a2d257990b66f3dbd251" category="inline-link-macro-rx"></block></block>
   <block id="8d2c4ebf93aef876f912d1dbc5d5f446" category="summary">Si votre environnement ne dispose pas d'un serveur DHCP, vous pouvez définir une adresse IP statique sur l'agent Converged Systems Advisor.</block>
@@ -777,4 +773,21 @@
   <block id="b7b722eea69a1d2e85256ecaa18b4620" category="sidebar">Règles de surveillance</block>
   <block id="231cf4c70d866b616c21baddaeed0696" category="sidebar">Dépannage</block>
   <block id="f6bd0d7447ff66cc6b859603a88fbde9" category="sidebar">Liens connexes</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Une fois que vous avez terminé</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
+  <block id="6e5bc02812454d72aa1b3361bc2f6c73" category="inline-image-macro">Numéro 1</block>
+  <block id="559f8475e1ff74d0a5b077794558916f" category="section-title"><block ref="dc5de6e35d5028cc4c0b89b89e621258" category="inline-image-macro-rx" type="image"></block> Préparez votre environnement</block>
+  <block id="3db14b7ee6183c9d58f1e9d5e8e63efd" category="inline-image-macro">Numéro 2</block>
+  <block id="bc83ea51badfd0910cc8d7bae37d8acd" category="section-title"><block ref="8a21168e601d45e544969f8d2c358917" category="inline-image-macro-rx" type="image"></block> Créez des comptes sur les terminaux FlexPod</block>
+  <block id="9f3ebc84fe13f3200262a9c4b7c9807d" category="inline-image-macro">numéro 3</block>
+  <block id="3e12ab5fae17206c542331228866ed0d" category="section-title"><block ref="436aa95806ef0877809848921c187b08" category="inline-image-macro-rx" type="image"></block> Accordez des privilèges utilisateur CSA à l'aide d'un serveur TACACS+</block>
+  <block id="86f188df3015051c771264e12c69d0e4" category="inline-image-macro">numéro 4</block>
+  <block id="511da2848c80f269eb677e5a5710cbcd" category="section-title"><block ref="b0069e021ff5287a729b22bfea26bbe1" category="inline-image-macro-rx" type="image"></block> Configurez et déployez l'agent</block>
+  <block id="5870ed875d2bc967928d9a48d0bcac54" category="inline-image-macro">numéro 5</block>
+  <block id="3a9f59ee192096314f07968a153e54b2" category="section-title"><block ref="c76f59d4b1b742813df5111ab3a44f58" category="inline-image-macro-rx" type="image"></block> Ajouter/partager une infrastructure dans le portail</block>
+  <block id="efd2db6ed66cb68b1ef85f7fc95f01ef" category="inline-image-macro">numéro 6</block>
+  <block id="000de680812539d81f6b9eb895793c90" category="section-title"><block ref="434171cc767ea1c526904692eaabbd08" category="inline-image-macro-rx" type="image"></block> Configurez les notifications</block>
+  <block id="71bb2e8e85702bc6dc8fe49bc2ca2664" category="inline-image-macro">numéro 7</block>
+  <block id="ec82488760b9c067f6a1effc164db7f9" category="section-title"><block ref="a30b4945ccf5eb8b859e8a3c07b0e494" category="inline-image-macro-rx" type="image"></block> Définissez une adresse IP statique</block>
+  <block id="492e5546e60705134bff8d7f80511a8d" category="section-title">Découvrez les nouveautés</block>
 </blocks>

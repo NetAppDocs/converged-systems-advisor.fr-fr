@@ -24,6 +24,7 @@ Vous pouvez ajouter des détails sur les contrats d'assistance pour chaque péri
 . Répétez les étapes pour chaque périphérique de la configuration.
 
 
+.Résultat
 Converged Systems Advisor affiche désormais les détails du contrat de support pour chaque appareil. Vous pouvez facilement voir quels périphériques ont des contrats de support actifs et expirés.
 
 image:screenshot_support_contracts.gif["Indique quatre contrats de support : l'un a expiré et les trois autres sont actifs."]

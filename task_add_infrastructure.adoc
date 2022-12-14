@@ -46,6 +46,7 @@ NOTE: Si vous êtes un partenaire ou un revendeur, vous pouvez ignorer les étap
 
 
 
+.Résultat
 Converged Systems Advisor ajoute l'infrastructure au portail et commence à collecter les données de configuration sur chaque périphérique. Attendez quelques minutes pour que l'agent collecte des informations sur les périphériques.
 
 
@@ -72,4 +73,5 @@ TIP: Vous pouvez entrer plusieurs adresses e-mail dans un seul champ en appuyant
 . Cliquez sur *Envoyer*.
 
 
+.Résultat
 L'utilisateur doit recevoir un e-mail contenant les instructions pour accéder à Converged Systems Advisor.
